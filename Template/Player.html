@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="/static/css/player.css">
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <div class="thumbnail-container">
+                <img id="music-thumbnail" src="/static/images/default-thumbnail.gif" alt="Thumbnail">
+            </div>
+            <h2 id="song-title">No song playing</h2>
+            <div class="controls">
+                <div class="controls-buttons">
+                    <button id="play-pause-btn"></button>
+                    <button id="prev-btn"></button>
+                    <button id="next-btn"></button>
+                    <button id="shuffle-btn"></button>
+                </div>
+                <div class="time-display">
+                    <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                </div>
+                <input id="seek-bar" type="range" min="0" max="100" value="0">
+                <div class="volume-controls">
+                    <label for="volume-bar">Volume</label>
+                    <input id="volume-bar" type="range" min="0" max="100" value="100">
+                </div>
+            </div>
+        </div>
+        <div id="menu" class="menu">
+            <button id="toggle-menu-btn" class="toggle-menu-btn">Menu</button>
+            <div id="menu-content" class="menu-content">
+                <h3>Manage Playlist</h3>
+                <input type="file" id="upload-song" accept="audio/*">
+                <button id="remove-song" class="remove-song-btn">Remove Song</button>
+                <select id="song-list">
+                    <!-- Options will be dynamically populated -->
+                </select>
+            </div>
+        </div>
+        
+        <!-- Toggle Button -->
+        <button id="toggle-queue-btn" class="toggle-queue-btn">Queue</button>
+        <!-- Playlist Queue -->
+       <!-- Queue Container -->
+        <div class="playlist-queue">
+            <h3>Queue</h3>
+            <ul id="queue-list"></ul>
+        </div> 
+    </div>
+    <script src="/static/js/player.js"></script>
+</body>
+</html>
