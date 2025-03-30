@@ -1,0 +1,259 @@
+/* Fullscreen Container */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('/static/images/bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* Hide playlist queue by default */
+.playlist-queue {
+    display: none; /* Hidden by default */
+    width: 300px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Toggle button styling */
+.toggle-queue-btn, .toggle-menu-btn {
+    position: absolute;
+    background-color: #534949;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    z-index: 20; /* Ensure the button is above other elements */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.toggle-queue-btn {
+    top: 10px;
+    right: 10px;
+}
+
+.toggle-menu-btn {
+    top: 10px;
+    left: 10px;
+}
+
+.toggle-queue-btn:hover, .toggle-menu-btn:hover {
+    background-color: #555;
+}
+
+/* Playlist queue styles */
+.playlist-queue h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#queue-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#queue-list li {
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+#queue-list li:hover {
+    background-color: #555;
+}
+
+/* Music player container */
+.music-player {
+    background-color: #2e2a2a;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgb(255, 255, 255);
+    text-align: center;
+    width: 350px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+/* Music Player Title */
+.music-player h2 {
+    font-family: 'Lato', sans-serif;
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+/* Thumbnail styles */
+.thumbnail-container {
+    text-align: center;
+}
+
+#music-thumbnail {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+/* Song title */
+.song-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    font-size: 16px; /* Adjusted font size for better readability */
+    margin: 10px 0; /* Adjusted margin */
+    text-align: center;
+}
+
+/* Controls */
+.controls {
+    display: block;
+    margin-top: 5px;
+}
+
+.controls-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* Button styles */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin: 0 10px;
+    font-size: 30px;
+    color: #fff;
+    transition: opacity 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Specific button symbols and colors */
+#play-pause-btn {
+    color: #fdfdfd;
+    font-size: 35px;
+}
+
+#play-pause-btn::before {
+    content: "▶️";
+}
+
+#play-pause-btn.playing::before {
+    content: "⏸️";
+}
+
+#prev-btn::before {
+    content: "⏪";
+}
+
+#next-btn::before {
+    content: "⏩";
+}
+
+#shuffle-btn::before {
+    content: "🔀";
+}
+
+/* Volume and seek bars */
+input[type="range"] {
+    width: 100%;
+    margin: 2px 0;
+}
+
+/* Adjusting space between time display and volume controls */
+.volume-controls {
+    margin-top: 5px;
+    color: #fdfdfd;
+}
+
+.time-display {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #fdfdfd;
+}
+
+/* Ensure the menu is hidden by default */
+.menu {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the menu content */
+.menu-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-content h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#upload-song {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.remove-song-btn {
+    width: 100%;
+    background-color: #f44;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-song-btn:hover {
+    background-color: #d33;
+}
+
+/* Select Dropdown */
+#song-list {
+    width: 100%;
+    margin-bottom: 10px;
+}
